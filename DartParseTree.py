@@ -291,3 +291,10 @@ class DartParseTree:
 			return self.Function.Lambda.LambdaStmt(nt, rt)
 		tokenlist.insert(0, nt)
 		return None
+
+
+# noinspection PyShadowingNames
+def transpile(expression):
+	dartprogram = DartParseTree(expression)
+	transpiledsrc = str(dartprogram)
+	return transpiledsrc
